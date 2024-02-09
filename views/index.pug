@@ -2,8 +2,8 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='shortcut icon' href='sources/images/favicon.png' type='image/x-icon')
-  link(rel='stylesheet' href='css/style.css')
+  link(rel='shortcut icon' href='/static/sources/images/favicon.png' type='image/x-icon')
+  link(rel='stylesheet' href='/static/css/style.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
   script(src='https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js')
   title Durgesh&apos;s - Portfolio
@@ -37,10 +37,10 @@ nav.respNav
         a(href='#Contact') Contact
 section.home
   video(autoplay='' muted='' loop='')
-    source(src='/sources/videos/bg.mp4' type='video/mp4')
+    source(src='/static/sources/videos/bg.mp4' type='video/mp4')
   .container
     span(style='font-size: 30px;') Hey , My Name is
-    img(src='/sources/images/VANKAYALADURGESHWARR.gif' alt='VDR')
+    img(src='/static/sources/images/VANKAYALADURGESHWARR.gif' alt='VDR')
     .socialMedia
       a(href='#github' title='GitHub')
         i.fa.fa-github
@@ -56,7 +56,7 @@ section#About.about
   .bottom
     .left
       .imgContainer
-        img(src='sources/images/VDR.png' alt="Durgesh's Image")
+        img(src='/static/sources/images/VDR.png' alt="Durgesh's Image")
     .right
       p.txt
         span(style='color:red;font-size: 30px;')
@@ -101,7 +101,7 @@ section#Projects.projects
   .card-container
     .card
       h4 Todo List (Javascript)
-      img(src='sources/images/todo-list.jpg' alt='todo-list')
+      img(src='/static/sources/images/todo-list.jpg' alt='todo-list')
       p
         | A JavaScript todo-list is a web app for task management. It uses HTML for structure, and JavaScript
         | for interactivity, such as adding, completing, or removing tasks. Persistence can be achieved using
@@ -111,7 +111,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
     .card
       h4 Reminder App (Node Js)
-      img(src='sources/images/Reminder-app.jpg' alt='ReminderApp')
+      img(src='/static/sources/images/Reminder-app.jpg' alt='ReminderApp')
       p
         | A Reminder App in Node.js can store tasks locally using the File System (fs) module. It schedules
         | reminders with node-cron and stores them in a local file. On receiving a task, it writes the task to
@@ -121,7 +121,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
     .card
       h4 Password Generator (Javascript)
-      img(src='sources/images/Password-Generator.jpg' alt='Password-Generator')
+      img(src='/static/sources/images/Password-Generator.jpg' alt='Password-Generator')
       p
         | A Password Generator in JavaScript uses the Math.random() function to create random passwords. It
         | allows users to select password length and character types (like uppercase, lowercase, numbers,
@@ -131,7 +131,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
     .card
       h4 Web-Based Notepad (JavaScript)
-      img(src='sources/images/notepad.jpg' alt='Notepad')
+      img(src='/static/sources/images/notepad.jpg' alt='Notepad')
       p
         | A Web-Based Notepad in JavaScript uses the localStorage object for storing and retrieving notes. It
         | allows users to write, save, and load notes directly in their browser. The application can also
@@ -141,7 +141,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
     .card
       h4 Chatting App (Node Js And Socket.io)
-      img(src='sources/images/Chatting App.jpg' alt='ChattingApp')
+      img(src='/static/sources/images/Chatting App.jpg' alt='ChattingApp')
       p
         | A Chatting App in Node.js uses the Socket.IO library for real-time, bidirectional communication. It
         | allows users to send and receive messages instantly. The server, built with Node.js and Express.js,
@@ -151,7 +151,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
     .card
       h4 Weather App (Fetch API)
-      img(src='sources/images/weather-project.jpg' alt='WeatherApp')
+      img(src='/static/sources/images/weather-project.jpg' alt='WeatherApp')
       p
         | A Weather App in JavaScript uses the Fetch API to retrieve weather data from a server. It sends
         | requests to a weather API, receives the data, and displays it to the user.
@@ -162,7 +162,7 @@ section#Projects.projects
   .card-container
     .card
       h4 Voice Assistant
-      img(src='sources/images/voice-assistant.jpg' alt='voice-assistant')
+      img(src='/static/sources/images/voice-assistant.jpg' alt='voice-assistant')
       p
         | A Voice Assistant in Python uses the tkinter library for the GUI, speech_recognition for voice
         | recognition, and the OpenAI API for processing commands. It listens to user&rsquo;s voice, converts it to
@@ -172,7 +172,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
     .card
       h4 Billing App
-      img(src='sources/images/billing-app.jpg' alt='billing-app')
+      img(src='/static/sources/images/billing-app.jpg' alt='billing-app')
       p
         | A Billing App in Python uses the tkinter library for GUI and MySQL for data integrity and storage. It
         | allows users to add items, calculate totals, and print bills using a printing.
@@ -181,7 +181,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
     .card
       h4 Pdf Merger
-      img(src='sources/images/pdf-merger.jpg' alt='pdf-merger')
+      img(src='/static/sources/images/pdf-merger.jpg' alt='pdf-merger')
       p
         | A PDF Merger in Python uses the PyPDF2 module to merge up to 5 PDF files. It reads the files,
         | combines them into one, and writes the output to a new PDF file.
@@ -190,7 +190,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
     .card
       h4 Calculator
-      img(src='sources/images/calculator.jpg' alt='calculator')
+      img(src='/static/sources/images/calculator.jpg' alt='calculator')
       p
         | A Calculator in Python uses the tkinter library for GUI. It allows users to perform basic arithmetic
         | operations like addition, subtraction, multiplication, and division.
@@ -201,7 +201,7 @@ section#Projects.projects
   .card-container
     .card
       h4 Expense Tracker
-      img(src='sources/images/Expense Tracker.jpg' alt='Expensetracker')
+      img(src='/static/sources/images/Expense Tracker.jpg' alt='Expensetracker')
       p
         | An Expense Tracker in Java, built in Android Studio, uses SQLite for local data storage. It allows
         | users to log and categorize expenses, and view a summary of their spending with security each user
@@ -211,7 +211,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('App Not Uploaded On PlayStore Yet');") Download Apk
     .card
       h4 Media Player
-      img(src='sources/images/MediaPlayer.jpg' alt='MediaPlayer')
+      img(src='/static/sources/images/MediaPlayer.jpg' alt='MediaPlayer')
       p
         | An Audio Player in Java, built in Android Studio, uses the MediaPlayer class for audio playback. It
         | allows users to play, pause, and stop audio files.
@@ -220,7 +220,7 @@ section#Projects.projects
         a.label(href='#none' onclick="alert('App Not Uploaded On PlayStore Yet');") Download Apk
     .card
       h4 Student Database Management
-      img(src='sources/images/student-DBMS.jpg' alt='todo-list')
+      img(src='/static/sources/images/student-DBMS.jpg' alt='todo-list')
       p
         | A Student Database Management System in Java, built in Android Studio, uses SQLite for data storage.
         | It allows users to add, update, delete, and view student records.
@@ -232,7 +232,7 @@ section#Contact.contact
     | Contact Me
   .bottom
     .left
-      img(src='sources/images/VDR.png' alt='Your Photo')
+      img(src='/static/sources/images/VDR.png' alt='Your Photo')
       p
         | Connect with me on social media platforms to stay updated with my latest projects and tech
         | innovations.
@@ -279,4 +279,4 @@ script.
   loop: true,
   loopCount: Infinity,
   });
-script(src='js/index.js')
+script(src='/static/js/index.js')
