@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve index.pug
 app.get("/", (req, res) => {
-  res.render("index", { error: null, success: null });
+  res.render("index.pug", { error: null, success: null });
 });
 
 // Create table if not exists
