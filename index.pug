@@ -1,0 +1,282 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='shortcut icon' href='sources/images/favicon.png' type='image/x-icon')
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js')
+  title Durgesh&apos;s - Portfolio
+nav
+  .left
+    p Durgesh&apos;s Portfolio
+  ul.right
+    li
+      a(href='#') Home
+    li
+      a(href='#About') About
+    li
+      a(href='#Projects') Projects
+    li
+      a(href='#Contact') Contact
+nav.respNav
+  .top
+    .respleft
+      p Durgesh&apos;s Portfolio
+    .respright
+      i#hamburger.fa.fa-bars(style='font-size: 20px;padding-right: 20px;')
+  #links
+    ul
+      li
+        a(href='#') Home
+      li
+        a(href='#About') About
+      li
+        a(href='#Projects') Projects
+      li
+        a(href='#Contact') Contact
+section.home
+  video(autoplay='' muted='' loop='')
+    source(src='/sources/videos/bg.mp4' type='video/mp4')
+  .container
+    span(style='font-size: 30px;') Hey , My Name is
+    img(src='/sources/images/VANKAYALADURGESHWARR.gif' alt='VDR')
+    .socialMedia
+      a(href='#github' title='GitHub')
+        i.fa.fa-github
+      a(href='#linkedin' title='LinkedIn')
+        i.fa.fa-linkedin
+      a(href='#whatsapp' title='WhatsApp')
+        i.fa.fa-whatsapp
+      a(href='#instagram' title='Instagram')
+        i.fa.fa-instagram
+section#About.about
+  .head
+    | About Me
+  .bottom
+    .left
+      .imgContainer
+        img(src='sources/images/VDR.png' alt="Durgesh's Image")
+    .right
+      p.txt
+        span(style='color:red;font-size: 30px;')
+          | I&apos;m 
+          span(style='text-transform: uppercase;font-weight: bold; color: white;')
+            | Vankayala Durgeshwar
+            | Rao
+        span(style='border-bottom: 2px solid red;')
+          | , a tech enthusiast with 5
+          | years of expertise in Machine Learning, Web Development, and App Development. My journey
+          | revolves around creating intelligent machine learning models, designing responsive websites, and
+          | crafting dynamic applications that blend innovation with functionality. 
+          br
+          |                         Driven by curiosity and a commitment to mastering the latest technologies, I strive to deliver
+          |                         seamless digital experiences. My passion lies in leveraging technology to transform ideas into
+          |                         impactful solutions. Let&apos;s explore the possibilities together and harness the power of tech to
+          |                         make a difference.
+      #skills
+        h2(style='color: red;') Proficient in :
+        .lbl
+          p.label Web Development
+          p.label App Development
+          p.label Database Development
+        .lbl
+          p.label Python
+          p.label Javascript
+          p.label Node Js
+          p.label React Js
+        .lbl
+          p.label Python Tkinter
+          p.label C
+          p.label Java
+          p.label OOPS
+          p.label DSA
+        .lbl
+          p.label MySQL
+          p.label MongoDB
+section#Projects.projects
+  .head
+    | Projects
+  h2 JavaScript Projects
+  .card-container
+    .card
+      h4 Todo List (Javascript)
+      img(src='sources/images/todo-list.jpg' alt='todo-list')
+      p
+        | A JavaScript todo-list is a web app for task management. It uses HTML for structure, and JavaScript
+        | for interactivity, such as adding, completing, or removing tasks. Persistence can be achieved using
+        | localStorage.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+    .card
+      h4 Reminder App (Node Js)
+      img(src='sources/images/Reminder-app.jpg' alt='ReminderApp')
+      p
+        | A Reminder App in Node.js can store tasks locally using the File System (fs) module. It schedules
+        | reminders with node-cron and stores them in a local file. On receiving a task, it writes the task to
+        | the file, and node-cron triggers the reminder.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+    .card
+      h4 Password Generator (Javascript)
+      img(src='sources/images/Password-Generator.jpg' alt='Password-Generator')
+      p
+        | A Password Generator in JavaScript uses the Math.random() function to create random passwords. It
+        | allows users to select password length and character types (like uppercase, lowercase, numbers,
+        | symbols).
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+    .card
+      h4 Web-Based Notepad (JavaScript)
+      img(src='sources/images/notepad.jpg' alt='Notepad')
+      p
+        | A Web-Based Notepad in JavaScript uses the localStorage object for storing and retrieving notes. It
+        | allows users to write, save, and load notes directly in their browser. The application can also
+        | include a password protection feature.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+    .card
+      h4 Chatting App (Node Js And Socket.io)
+      img(src='sources/images/Chatting App.jpg' alt='ChattingApp')
+      p
+        | A Chatting App in Node.js uses the Socket.IO library for real-time, bidirectional communication. It
+        | allows users to send and receive messages instantly. The server, built with Node.js and Express.js,
+        | handles incoming messages and broadcasts them to all connected clients.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+    .card
+      h4 Weather App (Fetch API)
+      img(src='sources/images/weather-project.jpg' alt='WeatherApp')
+      p
+        | A Weather App in JavaScript uses the Fetch API to retrieve weather data from a server. It sends
+        | requests to a weather API, receives the data, and displays it to the user.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+  h2 Python Projects
+  .card-container
+    .card
+      h4 Voice Assistant
+      img(src='sources/images/voice-assistant.jpg' alt='voice-assistant')
+      p
+        | A Voice Assistant in Python uses the tkinter library for the GUI, speech_recognition for voice
+        | recognition, and the OpenAI API for processing commands. It listens to user&rsquo;s voice, converts it to
+        | text, sends it to OpenAI API, and performs the requested action.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+    .card
+      h4 Billing App
+      img(src='sources/images/billing-app.jpg' alt='billing-app')
+      p
+        | A Billing App in Python uses the tkinter library for GUI and MySQL for data integrity and storage. It
+        | allows users to add items, calculate totals, and print bills using a printing.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+    .card
+      h4 Pdf Merger
+      img(src='sources/images/pdf-merger.jpg' alt='pdf-merger')
+      p
+        | A PDF Merger in Python uses the PyPDF2 module to merge up to 5 PDF files. It reads the files,
+        | combines them into one, and writes the output to a new PDF file.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+    .card
+      h4 Calculator
+      img(src='sources/images/calculator.jpg' alt='calculator')
+      p
+        | A Calculator in Python uses the tkinter library for GUI. It allows users to perform basic arithmetic
+        | operations like addition, subtraction, multiplication, and division.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('No Path Defined');") Visit Website
+  h2 Android Development Projects
+  .card-container
+    .card
+      h4 Expense Tracker
+      img(src='sources/images/Expense Tracker.jpg' alt='Expensetracker')
+      p
+        | An Expense Tracker in Java, built in Android Studio, uses SQLite for local data storage. It allows
+        | users to log and categorize expenses, and view a summary of their spending with security each user
+        | had to create an id while storing their expenses.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('App Not Uploaded On PlayStore Yet');") Download Apk
+    .card
+      h4 Media Player
+      img(src='sources/images/MediaPlayer.jpg' alt='MediaPlayer')
+      p
+        | An Audio Player in Java, built in Android Studio, uses the MediaPlayer class for audio playback. It
+        | allows users to play, pause, and stop audio files.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('App Not Uploaded On PlayStore Yet');") Download Apk
+    .card
+      h4 Student Database Management
+      img(src='sources/images/student-DBMS.jpg' alt='todo-list')
+      p
+        | A Student Database Management System in Java, built in Android Studio, uses SQLite for data storage.
+        | It allows users to add, update, delete, and view student records.
+      .btns
+        a.label(href='#none' onclick="alert('No Path Defined');") Code Here
+        a.label(href='#none' onclick="alert('App Not Uploaded On PlayStore Yet');") Download Apk
+section#Contact.contact
+  .head
+    | Contact Me
+  .bottom
+    .left
+      img(src='sources/images/VDR.png' alt='Your Photo')
+      p
+        | Connect with me on social media platforms to stay updated with my latest projects and tech
+        | innovations.
+      .cinfo
+        h3 Contact Information
+        p
+          | Email:&nbsp; 
+          a(href='mailto:code.durgesh86@gmail.com' style='text-decoration: none;color: white;border-bottom: 2px solid red;') code.durgesh86@gmail.com
+        p
+          | Phone:&nbsp; 
+          a(href='tel:+917735950068' style='text-decoration: none;color: white;border-bottom: 2px solid red;') Call Me
+        p
+          | Address: 
+          span(style='text-decoration: none;color: white;border-bottom: 2px solid red;') Rourkela,Odisha,India
+    .right
+      h3 Send a Message
+      
+      form(action='/contact' method='post')
+        input(type='text' name='name' placeholder='Name' required='')
+        input(type='email' name='email' placeholder='Email' required='')
+        input(type='text' name='subject' placeholder='Subject' required='')
+        textarea(name='message' placeholder='Message' required='')
+        button(type='submit' name='submit') Send Message
+        div#error #{error}
+        div#success #{success}
+footer
+  .left
+    p Durgesh&apos;s Portfolio
+  .right
+    p &copy; 2021 Durgesh&apos;s Portfolio
+    .social-media-icons
+      a(href='#' target='_blank')
+        i.fa.fa-facebook
+      a(href='#' target='_blank')
+        i.fa.fa-twitter
+      a(href='#' target='_blank')
+        i.fa.fa-instagram
+      a(href='#' target='_blank')
+        i.fa.fa-linkedin
+script.
+  var typed = new Typed('.skills', {
+  strings: ['Web Development', 'App Development', 'Machine Learning', 'Database Development'],
+  typeSpeed: 50,
+  loop: true,
+  loopCount: Infinity,
+  });
+script(src='js/index.js')
