@@ -29,7 +29,7 @@ try {
 
 // Set the view engine to Pug
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname)); // Views directory is the root directory
+app.set("views", path.join(__dirname, "views"));
 
 // Serve static files
 app.use(express.static(path.join(__dirname))); // Serve static files from the root directory
