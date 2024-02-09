@@ -6,7 +6,7 @@ require("dotenv").config();
 
 // Create an Express application
 const app = express();
-const port = process.env.PORT;
+const port = 3000;
 
 // Set up PostgreSQL connection
 const pool = new pg.Client({
@@ -19,13 +19,14 @@ const pool = new pg.Client({
   },
   sslmode: "require", // Add this line for secure connection
 });
-pool.connect((err, client, release) => {
-    if (err) {
-      console.error('Error connecting to the database:', err.stack);
-      return;
-    }
-    console.log('Connected to the database');
-  });
+
+try {
+  pool.connect();
+  console.log('Connected to the database');
+} catch (err) {
+  console.error('Error connecting to the database:', err.stack);
+}
+
 // Set the view engine to Pug
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname)); // Views directory is the root directory
@@ -51,13 +52,17 @@ const createTableQuery = `
     );
 `;
 
-pool.query(createTableQuery, (error, result) => {
-  if (error) {
-    console.error("Error creating table:", error);
-  } else {
-    console.log("Table created successfully");
-  }
-});
+try {
+  pool.query(createTableQuery, (error, result) => {
+    if (error) {
+      console.error("Error creating table:", error);
+    } else {
+      console.log("Table created successfully");
+    }
+  });
+} catch (err) {
+  console.error("Error creating table:", err);
+}
 
 // Handle contact form submission
 app.post("/contact", (req, res) => {
@@ -71,21 +76,30 @@ app.post("/contact", (req, res) => {
     formData.message,
   ];
 
-  pool.query(insertQuery, values, (error, result) => {
-    if (error) {
-      console.error("Error inserting data:", error);
-      res.render("index", {
-        success: null,
-        error: "An error occurred while processing your request",
-      });
-    } else {
-      res.render("index", {
-        success: "Your message has been sent!",
-        error: null,
-      });
-    }
-  });
+  try {
+    pool.query(insertQuery, values, (error, result) => {
+      if (error) {
+        console.error("Error inserting data:", error);
+        res.render("index", {
+          success: null,
+          error: "An error occurred while processing your request",
+        });
+      } else {
+        res.render("index", {
+          success: "Your message has been sent!",
+          error: null,
+        });
+      }
+    });
+  } catch (err) {
+    console.error("Error inserting data:", err);
+    res.render("index", {
+      success: null,
+      error: "An error occurred while processing your request",
+    });
+  }
 });
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
