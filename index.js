@@ -4,7 +4,10 @@ require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
+<<<<<<< HEAD
 const compression = require("compression");
+=======
+>>>>>>> 61a6321f8a3fe0c3b6a3540cc5f57318acc90b27
 
 // Create an Express application
 const app = express();
