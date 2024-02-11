@@ -1,8 +1,9 @@
-const express = require("express");
-const path = require("path");
-const bodyParser = require("body-parser");
 const pg = require("pg");
+const fs = require("fs");
 require("dotenv").config();
+const path = require("path");
+const express = require("express");
+const bodyParser = require("body-parser");
 
 // Create an Express application
 const app = express();
@@ -22,9 +23,9 @@ const pool = new pg.Client({
 
 try {
   pool.connect();
-  console.log('Connected to the database');
+  console.log("Connected to the database");
 } catch (err) {
-  console.error('Error connecting to the database:', err.stack);
+  console.error("Error connecting to the database:", err.stack);
 }
 
 // Set the view engine to Pug
@@ -33,8 +34,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // Serve static files
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'static')));
-
+app.use(express.static(path.join(__dirname, "static")));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -42,6 +42,44 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.render("index.pug", { error: null, success: null });
 });
+
+const videoPath = path.join(__dirname, "static", "sources" ,"videos", "bg.mp4");
+
+// Define a function to handle video streaming
+function streamVideo(req, res) {
+  const stat = fs.statSync(videoPath);
+  const fileSize = stat.size;
+  const range = req.headers.range;
+
+  if (range) {
+    const parts = range.replace(/bytes=/, "").split("-");
+    const start = parseInt(parts[0], 10);
+    const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
+
+    const chunkSize = end - start + 1;
+    const file = fs.createReadStream(videoPath, { start, end });
+    const headers = {
+      "Content-Range": `bytes ${start}-${end}/${fileSize}`,
+      "Accept-Ranges": "bytes",
+      "Content-Length": chunkSize,
+      "Content-Type": "video/mp4",
+    };
+
+    res.writeHead(206, headers);
+    file.pipe(res);
+  } else {
+    const headers = {
+      "Content-Length": fileSize,
+      "Content-Type": "video/mp4",
+    };
+
+    res.writeHead(200, headers);
+    fs.createReadStream(videoPath).pipe(res);
+  }
+}
+
+// Route to stream the video
+app.get("/video", streamVideo);
 
 // Create table if not exists
 const createTableQuery = `
