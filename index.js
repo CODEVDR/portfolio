@@ -109,7 +109,7 @@ try {
 }
 
 // Handle contact form submission
-app.post("/contact", (req, res) => {
+app.post("/", (req, res) => {
   const formData = req.body;
   const insertQuery =
     "INSERT INTO contact_form (name, email, subject, message) VALUES ($1, $2, $3, $4)";
